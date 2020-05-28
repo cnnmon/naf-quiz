@@ -159,7 +159,7 @@ const questions = [{
     question: "which song resonates with you the most?",
     answer1: "Toby Fox - Megalovania",
     answer1Val: [0, 0, 1],
-    answer2: "西木野 真姫 - Snow Halation",
+    answer2: "Nishikino Maki - Snow Halation",
     answer2Val: [0, 0, -1],
     answer3: "miyowolowophowone - Spring is in the Air ft. leg (feet. cabi)",
     answer3Val: [0, 1, 1],
