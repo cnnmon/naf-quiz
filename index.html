@@ -10,11 +10,11 @@
 <body>
   <div class="container" id="quiz">
     <picture>
-  		<img id="quiz_image" src="" alt="">
-  	</picture>
+      <img id="quiz_image" src="" alt="">
+    </picture>
     <div class="title">
       <h1>Government-Assigned Alignment Test<h1>
-      <p>it's just a regular alignment test.</p>
+          <p>it's just a regular alignment test.</p>
     </div>
     <div id="question" class="question"></div>
     <label class="option">
@@ -41,11 +41,44 @@
 
   <div class="container" id="result">
     <picture>
-  		<img id="result_image" src="" alt="">
-  	</picture>
+      <img id="result_image" src="" alt="">
+    </picture>
     <div class="title">
       <h1 class="result_title">NAF<h1>
-      <p class="result_alignment">NAF<p>
+          <p class="result_alignment">NAF<p>
+    </div>
+    <div class="lines">
+      <div id="mnLine">
+        <p class="pull-left"><span class="badge">M</span> <span id="mScore">(%)</span></p>
+        <p class="pull-right"><span id="nScore">(%)</span> <span class="badge">N</span></p>
+        <div class="progress">
+          <div id="mnChart" class="progress-bar">
+            <div class="bar mn"></div>
+          </div>
+          <div class="center-bar"></div>
+        </div>
+      </div>
+      <div id="baLine">
+        <p class="pull-left"><span class="badge">B</span> <span id="bScore">(%)</span></p>
+        <p class="pull-right"><span id="aScore">(%)</span> <span class="badge">A</span></p>
+        <div class="progress">
+          <div id="baChart" class="progress-bar">
+            <div class="bar ba"></div>
+          </div>
+          <div class="center-bar"></div>
+        </div>
+      </div>
+      <div id="tfLine">
+        <p class="pull-left"><span class="badge">T</span> <span id="tScore">(%)</span></p>
+        <p class="pull-right"><span id="fScore">(%)</span> <span class="badge">F</span></p>
+        <div class="progress">
+          <div id="tfChart" class="progress-bar">
+            <div class="bar tf"></div>
+          </div>
+          <div class="center-bar"></div>
+        </div>
+      </div>
+      <br class="clearfix">
     </div>
     <div class="result_body"></div>
     <div class="controls">

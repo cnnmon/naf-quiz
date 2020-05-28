@@ -190,7 +190,6 @@ const questions = [{
     answer4: "*fortnite default dance*",
     answer4Val: [-1, 0, 0]
   }
-
 ]
 
 const alignments = {
@@ -198,48 +197,56 @@ const alignments = {
     title: "SUPER CHIRGIN",
     alignment: "nice alpha feral",
     image: "art/naf.png",
+    color: "var(--pastelpink)",
     description: "the perfect intersection of confidence, genuine care, and just the right amount of chaos. this is the ultimate life form, the apex of human development, the image in which God made Adam. cannot be improved upon. there are no recorded real-life examples of this personality type yet."
   },
   nat: {
     title: "GUARDIAN",
     alignment: "nice alpha tame",
     image: "art/nat.png",
+    color: "var(--pastelpink)",
     description: "being responsible can be a burden. you often find yourself taking charge in group situations, or being the voice of reason when someone you know is about to do something absurd or dangerous. you may be referred to as the &#34;mom friend&#34; within your friend group&#151;perhaps a title you embrace with zeal (baking cookies every week and encouraging your friends to sleep at reasonable hours), or perhaps one you resent slightly. you may also have an attachment to one or more NBTs, who you feel particularly duty-bound to protect. (is this a healthy relationship? only time will tell.)"
   },
   nbf: {
     title: "TIER THREE SUB",
     alignment: "nice beta feral",
     image: "art/nbf.png",
+    color: "var(--salmon)",
     description: "a simp with an underlying sense of menace. you are extremely loyal to those you admire and care about, which can give way to possessiveness and jealousy if you're not careful. you will act on what you believe in, but your motivations are foggy at best, and you may often find yourself doing good deeds for bad reasons. because you care so deeply about what other people think of you, you compare yourself to others constantly, and you may not have the energy to focus on more than one or two people at a time&#151;this could lead to a neurotic spiral where you obsess over your interactions with a select few people and isolate yourself from the rest."
   },
   nbt: {
     title: "I'M BABY",
     alignment: "nice beta tame",
     image: "art/nbt.png",
+    color: "var(--salmon)",
     description: "the edenic apotheosis of purity and devotion. at the farthest end of the tame/feral spectrum, you are &#34;true baby&#34;&#151;soft and eager-to-please, unmarred by cynicism or greed, to be protected at all costs. if the T/F results are more evenly split, you are more likely a &#34;pseudo-baby&#34; (or &#34;simp&#34;)&#151;you have clear goals and motivations, perhaps even selfish ones, but you ultimately lack the edge that defines the NBF.<br><br>in either case, you are likely to be self-sacrificial, putting the needs of others over your own every time. you may spend a lot of time worrying if people genuinely like you, or convincing yourself that your constant good deeds (or gift-giving, or creative output) are the only reason people value you as a person."
   },
   maf: {
     title: "NIGHTMARE",
     alignment: "mean alpha feral",
     image: "art/maf.png",
+    color: "var(--sand)",
     description: "oh no. what will you do next. you are an unabashed maelstrom of impulsive decision-making and (probably ironic) aggression. will you start learning to throw knives? hack into your friend's twitter and start mass-posting fancams of perry the platypus? or&#151;god forbid&#151;COMPLIMENT SOMEONE?<br><br>because of your sporadic behavior (and maybe low attention span), you're unlikely to hold a grudge unless someone does something truly unforgivable. it's very possible that someone has done this to you in the past, unfortunately, but under most circumstances you don't actually feel even a fraction of the ferocity you project towards anyone. you do enjoy watching your friends squirm as you make a cursed joke very loudly in a library, though."
   },
   mat: {
     title: "SHARPAY EVANS",
     alignment: "mean alpha tame",
     image: "art/mat.png",
+    color: "var(--sand)",
     description: "you are often the center of attention, and you have a flair for the dramatic&#151;maybe you have trouble expressing yourself without magnifying your emotions almost to the point of parody. your larger-than-life personality means you are quick to make both close friends and bitter enemies, and you will hold a grudge until the end of time. you have a strong competitive drive, which means you are likely very skilled at the things that interest you, but you have trouble taking the back seat. you would strongly consider dying for your friends. on wednesdays, you wear pink."
   },
   mbf: {
     title: "GOBLIN",
     alignment: "mean beta feral",
     image: "art/mbf.png",
+    color: "var(--orange)",
     description: "the grotesque, malformed super-chirgin. a bundle of chaos tempered by fear, you are likely reclusive with a quiet explosiveness only known to your close friends. you probably aspire to be NAF, but insecurity or awkwardness has made your &#34;nice&#34; qualities manifest as submissive, and your &#34;alpha&#34; qualities as sarcastic and rabid. you may have a habit of overthinking or underthinking (or both) your behavior in your attempt to ascend to the ultimate personality type. also, your sleep schedule is terrible."
   },
   mbt: {
     title: "INCEL",
     alignment: "mean beta tame",
     image: "art/mbt.png",
+    color: "var(--orange)",
     description: "emotions in a bottle. you often feel that the world is unfair to you, but you are unlikely to take action on those feelings. it's possible that you find it difficult to make close friends, because while you've mastered surface-level interactions, you find it challenging to be truly vulnerable without coming across as whiny. if you are upset with someone, there is a 0&#37; chance you will voice your complaints to them&#151;you'll just seethe silently until one of you drops dead. you often find yourself admiring people from afar, and perhaps your loneliness compels you to devote yourself entirely to a non-social craft or activity."
   }
 };
@@ -314,9 +321,32 @@ function getResults() {
   quizContainer.hide();
   resultContainer.show();
   const a = alignments[r];
+  calcLines(r);
 
-  $('.result_title').html("<span style='background-color: var(--salmon)'>" + r.toUpperCase() + ": " + a.title + "</span>");
+  $('.result_title').html("<span style='background-color:" + a.color + "'>" + r.toUpperCase() + ": " + a.title + "</span>");
   $('#result_image').attr("src", a.image);
   $('.result_alignment').html(a.alignment);
   $('.result_body').html(a.description);
+}
+
+function calcLines(r){
+  getPercentage(r, 'm', 'n', 0);
+  getPercentage(r, 'b', 'a', 1);
+  getPercentage(r, 't', 'f', 2);
+}
+
+function getPercentage(r, name, counterName, index){
+  let val = (Math.floor(Math.abs(score[index])/9 * 100)).toString();
+  if(r[index]===name){
+    $("#"+name+"Score").html("(" + val + "%)").toString();
+    $("#"+counterName+"Score").hide();
+    $('.'+name+counterName).css({
+      width: val/2 + 50 + "%",
+      marginLeft: "auto"
+    });
+  } else {
+    $("#"+counterName+"Score").html("(" + val + "%)").toString();
+    $("#"+name+"Score").hide();
+    $('.'+name+counterName).css({width: val/2 + 50 + "%"});
+  }
 }
