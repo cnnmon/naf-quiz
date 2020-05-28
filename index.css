@@ -1,9 +1,9 @@
 :root {
   --eggshell: rgb(248, 237, 235);
-  --pastelpink: rgb(252, 213, 206);
-  --salmon: rgb(255, 181, 167);
-  --sand: rgb(249, 220, 196);
-  --orange: rgb(254, 200, 154);
+  --pastelpink: rgb(255, 218, 185);
+  --salmon: rgb(251, 196, 171);
+  --sand: rgb(248, 173, 157);
+  --orange: rgb(240, 128, 128);
   --darkorange: rgb(217, 132, 87);
 }
 
@@ -91,7 +91,15 @@ body {
 }
 
 .container label input:checked + span.option2 {
+	background-color: var(--salmon);
+}
+
+.container label input:checked + span.option3 {
 	background-color: var(--sand);
+}
+
+.container label input:checked + span.option4 {
+	background-color: var(--orange);
 }
 
 .container button {
@@ -120,4 +128,10 @@ div.footer p {
   text-align: right;
   margin: 7px -5px;
   color: var(--darkorange);
+}
+
+.line {
+  margin: 20px;
+  width: 400px;
+  height: 8px;
 }
