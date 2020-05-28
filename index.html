@@ -1,0 +1,48 @@
+<html lng="en">
+
+<head>
+  <title>Personality Quiz</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="index.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+  <div class="container" id="quiz">
+    <picture>
+  		<img id="quiz_image" src="" alt="">
+  	</picture>
+    <div class="title">
+      <h1>Government-Assigned Alignment Test<h1>
+      <p>it's just a regular alignment test.</p>
+    </div>
+    <div id="question" class="question"></div>
+    <label class="option">
+      <input type="radio" name="option" value="1" />
+      <span class="option1"></span>
+    </label>
+    <label class="option">
+      <input type="radio" name="option" value="2" />
+      <span class="option2"></span>
+    </label>
+    <div class="controls">
+      <button class="next">Next</button>
+    </div>
+
+  </div>
+
+  <div class="container" id="result">
+    <div class="title">
+      <h1 class="result_title">NAF<h1>
+    </div>
+    <div class="result_body"></div>
+    <div class="controls">
+      <button class="restart">Restart</button>
+    </div>
+    <div class="footer">
+      <p>(c) please blame miyo for this monstrosity</p>
+    </div>
+  </div>
+</body>
+
+</html>
