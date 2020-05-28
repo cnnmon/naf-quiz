@@ -251,7 +251,6 @@ let quizContainer, resultContainer, question, option1, option2, option3, nextBut
 
 $(document).ready(function() {
   initElements();
-  moveProgressBar();
   generateQuestion(currentQuestion);
 
   $('input[name="option"]:radio').click(function(e) {
@@ -320,13 +319,4 @@ function getResults() {
   $('#result_image').attr("src", a.image);
   $('.result_alignment').html(a.alignment);
   $('.result_body').html(a.description);
-}
-
-function moveProgressBar() {
-  let getPercent = 4 / 100;
-  let getProgressWrapWidth = $('.progress-wrap').width();
-  let progressTotal = getPercent * getProgressWrapWidth;
-  $('.progress-bar').stop().animate({
-    left: progressTotal
-  }, 10);
 }
