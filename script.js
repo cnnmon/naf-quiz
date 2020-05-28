@@ -71,7 +71,7 @@ const questions = [{
     answer4Val: [-1, 0, 1]
   },
   {
-    image: "https://cdn.discordapp.com/attachments/552143949507198998/704121186157592632/lasabi.png",
+    image: "https://cdn.discordapp.com/attachments/552143949507198998/715449564454453248/Screen_Shot_2020-05-28_at_2.21.05_AM.png",
     question: "who would win in a fight: cabi or miyo?",
     answer1: "cabi (she is short)",
     answer1Val: [1, 1, 0],
