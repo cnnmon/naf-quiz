@@ -89,7 +89,7 @@ const questions = [{
     answer1Val: [-1, 0, 1],
     answer2: "econ",
     answer2Val: [-1, 0, -1],
-    answer3: "music",
+    answer3: "music (worse)",
     answer3Val: [1, 0, 1],
     answer4: "b o o k  s t u d y",
     answer4Val: [1, 0, -1]
@@ -125,7 +125,7 @@ const questions = [{
     answer1Val: [-1, 0, -1],
     answer2: "hello there",
     answer2Val: [1, 0, -1],
-    answer3: "cone knee chee waaaaaaah/ohio goes eye mass",
+    answer3: "*kya**nuzzles*",
     answer3Val: [1, 0, 1],
     answer4: "good morning gamers! welcome to my minecraft let's play. in this episode, we're gonna be going to the nether, but before we get into it, i have a word from today's sponsor: RAID: Shadow Legends&#153;. RAID: Shadow Legends&#153; is an immersive online experience with everything you'd expect from a brand new RPG title. It's got an amazing storyline, awesome 3D graphics, giant boss fi",
     answer4Val: [-1, 0, 1]
